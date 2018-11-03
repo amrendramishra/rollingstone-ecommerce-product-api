@@ -1,0 +1,147 @@
+Following are some of the URLS and related content to help test the Product Microservice
+
+POST http://localhost:8080/product
+
+{
+  "productCode":"P1249493Z19",
+  "productName":"Boy's Shirt",
+  "shortDescription":"Boy's Full Sleeve Shirt",
+  "longDescription":"Boys's Full Sleeve Shirt with Tie",
+  "canDisplay":"true",
+  "isDeleted":"false",
+  "isAutomotive":"false",
+  "parentCategory": {
+    "id":"3",
+    "categoryName":"Men's Clothing",
+    "categoryDescription":"Men's Branded Designer Clothing"
+    },
+  "category":{
+    "id":"4",
+    "categoryName":"Young Men's Clothing",
+    "categoryDescription":"Young Men's Branded Designer Clothing"
+    }
+}
+
+GET http://localhost:8080/product
+
+{
+"content": [
+  {
+"id": 6,
+"productCode": "P1249493Z19",
+"productName": "Boy's Shirt",
+"shortDescription": "Boy's Full Sleeve Shirt",
+"longDescription": "Boys's Full Sleeve Shirt with Tie",
+"canDisplay": true,
+"parentCategory": {
+"id": 3,
+"categoryName": "Men's Clothing",
+"categoryDescription": "Men's Branded Designer Clothing"
+},
+"category": {
+"id": 4,
+"categoryName": "Young Men's Clothing",
+"categoryDescription": "Young Men's Branded Designer Clothing"
+},
+"deleted": false,
+"automotive": false,
+"international": false
+},
+  {
+"id": 5,
+"productCode": "P1249493Z18",
+"productName": "Men's Shirt",
+"shortDescription": "Men's Full Sleve Shirt",
+"longDescription": "Men's Full Sleve Shirt with Tie",
+"canDisplay": true,
+"parentCategory": {
+"id": 3,
+"categoryName": "Men's Clothing",
+"categoryDescription": "Men's Branded Designer Clothing"
+},
+"category": {
+"id": 4,
+"categoryName": "Young Men's Clothing",
+"categoryDescription": "Young Men's Branded Designer Clothing"
+},
+"deleted": false,
+"automotive": false,
+"international": false
+}
+],
+"pageable": {
+"sort": {
+"sorted": true,
+"unsorted": false
+},
+"offset": 0,
+"pageNumber": 0,
+"pageSize": 20,
+"paged": true,
+"unpaged": false
+},
+"last": true,
+"totalPages": 1,
+"totalElements": 2,
+"size": 20,
+"number": 0,
+"numberOfElements": 2,
+"first": true,
+"sort": {
+"sorted": true,
+"unsorted": false
+}
+}
+
+GET http://localhost:8080/rollingstone-web-api/product/4
+
+{
+"id": 5,
+"productCode": "P1249493Z18",
+"productName": "Men's Shirt",
+"shortDescription": "Men's Full Sleve Shirt",
+"longDescription": "Men's Full Sleve Shirt with Tie",
+"canDisplay": true,
+"parentCategory": {
+"id": 3,
+"categoryName": "Men's Clothing",
+"categoryDescription": "Men's Branded Designer Clothing"
+},
+"category": {
+"id": 4,
+"categoryName": "Young Men's Clothing",
+"categoryDescription": "Young Men's Branded Designer Clothing"
+},
+"deleted": false,
+"automotive": false,
+"international": false
+}
+
+
+PUT http://localhost:8080/product/5
+
+Body
+
+{
+  "id":5,
+  "productCode": "P1249493Z19",
+  "productName": "Boy's Shirt",
+  "shortDescription": "Boy's Full Sleeve Shirt",
+  "longDescription": "Boys's Full Sleeve Shirt with Tie with Calflinks",
+  "canDisplay": "true",
+  "isDeleted": "false",
+  "isAutomotive": "false",
+  "parentCategory": {
+    "id": "3",
+    "categoryName": "Men's Clothing",
+    "categoryDescription": "Men's Branded Designer Clothing"
+  },
+  "category": {
+    "id": "4",
+    "categoryName": "Young Men's Clothing",
+    "categoryDescription": "Young Men's Branded Designer Clothing"
+  }
+}
+
+DELETE http://localhost:8080/product/4
+
